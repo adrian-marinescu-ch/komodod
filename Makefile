@@ -1,19 +1,13 @@
-NAME		?= capitaltech/call-docker
+NAME		?= marinescuadrian/komodod
 IMAGE		?= $(NAME):latest
 
-.PHONY: default build run push deploy
+.PHONY: default build push
 
-default: build run
+default: build push
 
 build:
 	@echo '> Building "$(NAME)" docker image...'
 	@docker build -t $(IMAGE) .
-
-run:
-	@echo '> Starting "$(NAME)" container...'
-	@docker run -p 19608:19608 \
-							-p 19609:19609 \
-							-d $(IMAGE)
 
 push:
 	docker push $(IMAGE)
