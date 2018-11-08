@@ -1,4 +1,4 @@
-FROM	ubuntu:latest
+FROM	alpine:latest
 MAINTAINER	marinescuadrian - https://github.com/marinescuadrian
 
 # Download dependencies & client
